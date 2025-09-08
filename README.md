@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tubi Submissions Router
 
-## Getting Started
+A Next.js application that routes content submissions to the appropriate Tubi channels - either Tubi Originals for development projects or RFD (Request for Distribution) for completed content.
 
-First, run the development server:
+## What it does
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This application provides a streamlined submission flow that:
+- Routes users to Tubi Originals Portal for ideas, pitches, treatments, or works-in-progress
+- Handles RFD submissions for completed films/series through an integrated form
+- Sends email notifications for RFD submissions via Resend API
+- Provides FAQ section for common submission questions
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Local Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Install dependencies:
+   ```bash
+   npm i
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-## Learn More
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-To learn more about Next.js, take a look at the following resources:
+## Environment Variables
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Copy `.env.example` to `.env.local` and configure:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `RESEND_API_KEY` - Your Resend API key for sending emails
+- `EMAIL_FROM` - Email address to send from (default: onboarding@resend.dev)
+- `RFD_NOTIFY_TO` - Email address to receive RFD submission notifications
 
-## Deploy on Vercel
+See `.env.example` for the complete list.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This app is designed for Vercel deployment:
+
+1. Connect your GitHub repository to Vercel
+2. Set environment variables in Vercel Dashboard (Production environment):
+   - `RESEND_API_KEY`
+   - `EMAIL_FROM`
+   - `RFD_NOTIFY_TO`
+3. Deploy or redeploy to Production
+
+### API Endpoints
+
+- `GET /api/ping` - Health check endpoint
+- `POST /api/rfd-intake` - Handles RFD form submissions
+
+## Security Notes
+
+- No file uploads are supported - submissions use external links only
+- Email submissions are handled server-side only
+- Environment variables are required for email functionality
+- All sensitive data is handled via environment variables
+
+## Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm run typecheck` - Run TypeScript type checking
+
+## License
+
+[License information to be added]

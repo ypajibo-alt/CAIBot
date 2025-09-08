@@ -1,15 +1,45 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Tubi Sans Variable';
+  src: url('/fonts/TubiStansVariable.woff2') format('woff2'),
+       url('/fonts/TubiStansVariable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
+/* stylelint-disable-next-line at-rule-no-unknown */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
+  /* Tubi Brand Colors */
+  --color-tubi-deep-purple: #45009D;
+  --color-tubi-vibrant-violet: #8C00E5;
+  --color-tubi-hello-yellow: #FFFF13;
+  --color-tubi-white: #FFFFFF;
+  --color-tubi-off-white: #F6F6F6;
+  --color-tubi-gray: #E4E3EC;
+  --color-tubi-dark-purple: #0B0019;
+  --color-tubi-black: #000000;
+  --color-tubi-screen-violet: #53008B;
+  --color-tubi-purpleblue: #7408ff
+  
+  /* Font Families */
+  --font-heading: 'Tubi Sans Variable', 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  
+  /* Background Images */
+  --background-gradient-marketing: linear-gradient(15deg, #8C00E5 0%, #45009D 100%);
+  --background-gradient-product: linear-gradient(15deg, #53008B 0%, #0B0019 100%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,8 +49,15 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+#wizard {
+  scroll-margin-top: 6rem;
 }
