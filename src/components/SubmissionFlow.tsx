@@ -202,11 +202,10 @@ export default function SubmissionFlow() {
           <div className="rounded-2xl border border-gray-200 bg-white shadow-sm p-8 flex flex-col justify-between h-full">
             <div className="mx-auto max-w-md text-center space-y-5 flex flex-col justify-center flex-1">
               <h3 className="text-2xl font-extrabold tracking-tight text-neutral-900">
-                Tubi Originals
+                Tubi Originals Development
               </h3>
               <p className="text-base leading-relaxed text-neutral-600">
-                For ideas, pitches, treatments, or works-in-progress you&apos;d like Tubi
-                to consider developing into a Tubi Original.
+                For pitches, treatments, or scripts you&apos;d like Tubi to consider developing into a Tubi Original.
               </p>
             </div>
             <div className="mt-6 flex justify-center">
