@@ -6,8 +6,8 @@ A Next.js application that routes content submissions to the appropriate Tubi ch
 
 This application provides a streamlined submission flow that:
 - Routes users to Tubi Originals Portal for ideas, pitches, treatments, or works-in-progress
-- Handles RFD submissions for completed films/series through an integrated form
-- Sends email notifications for RFD submissions via Resend API
+- Handles RFD submissions for completed films/series through an integrated form ((name, email, synopsis, screener URL)
+- Sends email notifications to originals-submissions@tubi.tv for RFD submissions via Resend API
 - Provides FAQ section for common submission questions
 
 ## Local Development
